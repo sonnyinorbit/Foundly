@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font classes for font customization */
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #F8F8F8;
+    color: #2D3748;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: #1A202C;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    color: #4A5568;
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  /* Only target the specific org name paragraph in hero sections */
+  .hero-org-name,
+  .text-white.hero-org-name,
+  p.text-white.hero-org-name {
+    color: #FFFFFF !important;
+  }
+
+  /* Override global p color for org names specifically */
+  p.hero-org-name {
+    color: #FFFFFF !important;
+  }
+
+  button {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  a {
+    color: #1A202C;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: #2D3748;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#2D3748] text-white border border-[#2D3748] rounded-2xl px-6 py-3 text-sm font-medium cursor-pointer transition-all duration-200 inline-flex items-center gap-2 hover:bg-[#1A202C] hover:border-[#1A202C] shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-[#FFF0B3] text-[#2D3748] border border-[#FFF0B3] rounded-2xl px-6 py-3 text-sm font-medium cursor-pointer transition-all duration-200 inline-flex items-center gap-2 hover:bg-[#FFE066] hover:border-[#FFE066] shadow-sm hover:shadow-md;
+  }
+
+  .btn-accent {
+    @apply bg-[#FF6B6B] text-white border border-[#FF6B6B] rounded-2xl px-6 py-3 text-sm font-medium cursor-pointer transition-all duration-200 inline-flex items-center gap-2 hover:bg-[#FF5252] hover:border-[#FF5252];
+  }
+
+  .card {
+    @apply bg-[#FFFBF5] rounded-3xl p-8 border border-[#F7FAFC] transition-all duration-200 hover:border-[#E2E8F0] shadow-lg hover:shadow-xl;
+  }
+
+  .stat-card {
+    @apply bg-white rounded-2xl p-6 text-center border border-[#F7FAFC] transition-all duration-200 hover:border-[#E2E8F0] shadow-md hover:shadow-lg;
+  }
+
+  .sidebar-card {
+    @apply bg-[#FFF0B3] rounded-3xl p-6 border border-[#FFE066] transition-all duration-200 shadow-lg;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-[#E2E8F0] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FF6B6B] focus:border-[#FF6B6B] transition-all duration-200 bg-white text-[#2D3748] placeholder-[#A0AEC0];
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 border border-[#E2E8F0] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FF6B6B] focus:border-[#FF6B6B] transition-all duration-200 resize-none bg-white text-[#2D3748] placeholder-[#A0AEC0];
+  }
+
+  .navigation-link {
+    @apply text-[#4A5568] hover:text-[#1A202C] transition-colors duration-200 font-medium;
+  }
+
+  .lesson-card {
+    @apply bg-white rounded-2xl p-4 border border-[#F7FAFC] transition-all duration-200 hover:border-[#E2E8F0] shadow-md hover:shadow-lg;
+  }
+
+  .play-button {
+    @apply absolute bottom-2 left-2 w-6 h-6 bg-[#1A202C] rounded-full flex items-center justify-center hover:bg-[#2D3748] transition-colors duration-200;
+  }
+
+  .like-button {
+    @apply text-[#FF6B6B] hover:text-[#FF5252] transition-colors duration-200;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #E2E8F0;
+  border-top: 3px solid #FF6B6B;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Print styles for PDF export */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  nav, button, [data-testid="toast"] {
+    display: none !important;
+  }
+  
+  .pdf-export-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    position: static !important;
+    left: auto !important;
+  }
+  
+  .card, .stat-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  .page-break {
+    page-break-before: always;
+    break-before: always;
+  }
+  
+  * {
+    box-sizing: border-box !important;
+  }
+}
+
+/* PDF Export centering styles */
+.pdf-export-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  background-color: #ffffff !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.pdf-export-container * {
+  text-align: inherit !important;
+  box-sizing: border-box !important;
+}
+
+.pdf-export-container .text-center {
+  text-align: center !important;
+}
+
+.pdf-export-container .text-left {
+  text-align: left !important;
+}
+
+.pdf-export-container .text-right {
+  text-align: right !important;
+}
+
+/* Ensure all sections are properly centered */
+.pdf-export-container .max-w-4xl,
+.pdf-export-container .max-w-6xl {
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+/* Force center alignment for all content */
+.pdf-export-container {
+  text-align: center !important;
+}
+
+.pdf-export-container * {
+  text-align: inherit !important;
+}
+
+/* Ensure grid layouts are centered */
+.pdf-export-container .grid {
+  justify-items: center !important;
+}
+
+/* Ensure content is properly centered in PDF */
+.pdf-export-container > div {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Improve text visibility in PDF */
+.pdf-export-container h1,
+.pdf-export-container h2,
+.pdf-export-container h3,
+.pdf-export-container h4,
+.pdf-export-container h5,
+.pdf-export-container h6 {
+  color: #1A202C !important;
+  font-weight: bold !important;
+}
+
+.pdf-export-container p {
+  color: #4A5568 !important;
+}
+
+/* Ensure gradients and colors render properly */
+.pdf-export-container .bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #9333EA, #2563EB) !important;
+}
+
+.pdf-export-container .bg-purple-600 {
+  background-color: #9333EA !important;
+}
+
+.pdf-export-container .bg-green-500 {
+  background-color: #10B981 !important;
+}
+
+.pdf-export-container .bg-blue-600 {
+  background-color: #2563EB !important;
+}
+
+.pdf-export-container .bg-orange-500 {
+  background-color: #F59E0B !important;
+} 
